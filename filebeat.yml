@@ -1,1 +1,16 @@
+filebeat.inputs:
+  -type: log
+  enabled: true
+  paths:
+    -/var/log/*.log
+    -/var/log/syslog
 
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+
+
+setup.kibana:
+  host: "kibana:5601"
+
+logging.level: info
